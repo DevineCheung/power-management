@@ -1,0 +1,263 @@
+/* Reset */
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;  /* 禁止页面滚动 */
+
+}
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* 侧边栏头部 */
+.sidebar-header {
+    padding: 0px 0; /* 调整上下内边距，减小高度 */
+    text-align: center;
+    background-color: #34495e;
+    font-weight: bold;
+    font-size: 16px; /* 减小字体大小 */
+    color: white;
+}
+
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 0px 0;
+}
+
+/* 菜单列表 */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 菜单项默认样式 */
+.menu li {
+    padding: 10px 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    font-size: 20px;
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 水平居左 */
+}
+
+/* 使用 NavLink 使其充满整个菜单项区域 */
+.menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+/* 悬停效果 */
+.menu li:hover {
+    background-color: #34495e;
+}
+
+/* 选中项的高亮样式 */
+.menu li .active {
+    background-color: #16a085;  /* 高亮绿色 */
+    font-weight: bold; /* 加粗 */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* 内部阴影 */
+    transform: scale(1.05); /* 轻微放大 */
+}
+
+/* 选中项的高亮，确保 NavLink 也继承 */
+.menu li .active a {
+    background-color: #16a085;
+    font-weight: bold;
+}
+
+
+
+/* 主内容区域 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+}
+
+.navbar {
+    height: 56px;
+
+    background-color: #636e72;
+    display: flex;
+    justify-content: flex-end; /* 左对齐 */
+    align-items: center;
+    padding: 0 40px; /* 通过增加内边距来使内容区域更宽 */
+}
+
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #2c3e50;
+}
+
+.navbar-center {
+    flex: 3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px; /* 增大字体 */
+    color: #ffffff; /* 设为白色 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* 添加阴影，使其更清晰 */
+}
+
+
+/* 仪表盘内容 */
+.dashboard-content1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* 仪表盘内容 */
+.dashboard-content {
+    display: grid;
+    gap: 0px;
+    padding: 10px;
+}
+
+.dashboard-content img {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;     /* 保持图片比例，完整显示 */
+    display: block;          /* 移除图片底部的空白间距 */
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* 控制卡片高度 */
+.card.chart {
+    padding-top: 10px; /* 修改顶部的内边距 */
+    padding-bottom: 10px;
+    height: 390px;
+}
+
+.card.chart.card-1, .card.chart.card-2, .card.chart.card-3, .card.chart.card-4 {
+    padding-top: 10px; /* 控制模块顶部的内边距 */
+}
+
+/* 可根据需要进一步调整 */
+.card h3 {
+    margin-top: 0; /* 删除h3标题上方的多余间距 */
+}
+
+/.chart-placeholder {
+     height: 80%;
+     background: #dfe6e9;
+     border-radius: 4px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 16px;
+     color: #636e72;
+ }
+
+/* 模式选择与碳排放 */
+.right-top-container {
+    display: flex; /* 设置水平布局 */
+    gap: 15px; /* 添加元素之间的间距 */
+    height: 85%; /* 容器占满父元素的高度 */
+}
+
+.square {
+    flex: 0.8; /* 占据左侧 1 份宽度 */
+    aspect-ratio: 1; /* 调整正方形高度为原始宽度的 1.2 倍，拉高比例 */
+    background-color: #74b9ff; /* 设置背景颜色 */
+    display: flex; /* 内部内容居中对齐 */
+    justify-content: center; /* 水平方向居中 */
+    align-items: center; /* 垂直方向居中 */
+    border-radius: 20px; /* 圆角效果 */
+    color: white; /* 文本颜色 */
+    font-size: 29px; /* 字体大小 */
+    text-align: center; /* 文本居中 */
+}
+
+.rectangle-container {
+    flex: 2; /* 占据右侧 2 份宽度 */
+    display: flex; /* 垂直布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    gap: 10px; /* 元素间距 */
+    height: 100%; /* 容器占满父元素的高度 */
+}
+
+.rectangle {
+    flex: 1; /* 均分容器中的空间 */
+    background-color: #55efc4; /* 设置背景颜色 */
+    display: flex; /* 内容居中对齐 */
+    justify-content: center; /* 水平方向居中 */
+    align-items: center; /* 垂直方向居中 */
+    border-radius: 20px; /* 圆角效果 */
+    text-align: center; /* 文本居中 */
+    color: #2d3436; /* 字体颜色 */
+    font-size: 29px; /* 字体大小 */
+}
+
+
+
+
+
+
+.forecast-dashboard-content {
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    gap: 20px;              /* 子元素之间的间距 */
+    padding: 10px;          /* 内容内边距 */
+}
+
+
+
+.card.chart.card-5{
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        height: 390px;
+}
+
+
+.optimization-dashboard-content {
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    gap: 10px;              /* 子元素之间的间距 */
+    padding: 10px;          /* 内容内边距 */
+    height: calc(100vh - 80px); /* 视口高度 - 导航栏高度 */
+    overflow-y: auto;   /* 启用垂直滚动 */
+    padding: 20px;
+}
+
+
+
+.card.chart.card-6{
+    background: white;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    height: 266px;
+}
